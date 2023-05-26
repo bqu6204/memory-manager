@@ -1,0 +1,35 @@
+{
+    "name": "memory-manager",
+    "version": "1.0.0",
+    "description": "A simple memory manager for standardizing the behavior when interacting with JavaScript Map Object as a memory storage.",
+    "main": "commitlint.config.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "npx eslint .",
+        "prettier": "prettier --write ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bqu6204/memory-manager.git"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.6.3",
+        "@commitlint/config-conventional": "^17.6.3",
+        "@typescript-eslint/eslint-plugin": "^5.59.7",
+        "@typescript-eslint/parser": "^5.59.7",
+        "eslint": "^8.41.0",
+        "husky": "^8.0.3",
+        "prettier": "^2.8.8",
+        "typescript": "^5.0.4"
+    },
+    "keywords": [
+        "memory",
+        "storage"
+    ],
+    "author": "Esong",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bqu6204/memory-manager/issues"
+    },
+    "homepage": "https://github.com/bqu6204/memory-manager#readme"
+}
