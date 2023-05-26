@@ -1,5 +1,5 @@
 {
-    "name": "memory-manager",
+    "name": "ts-map-storage",
     "version": "1.0.0",
     "description": "A simple memory manager for standardizing the behavior when interacting with JavaScript Map Object as a memory storage.",
     "main": "commitlint.config.js",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/bqu6204/memory-manager.git"
+        "url": "git+https://github.com/bqu6204/ts-map-storage.git"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.6.3",
@@ -30,7 +30,7 @@
     "author": "Esong",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/bqu6204/memory-manager/issues"
+        "url": "https://github.com/bqu6204/ts-map-storage/issues"
     },
-    "homepage": "https://github.com/bqu6204/memory-manager#readme"
+    "homepage": "https://github.com/bqu6204/ts-map-storage#readme"
 }
