@@ -12,6 +12,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    "ignorePatterns": ["**/*.js", "dist/", "node_modules/*"],
     "rules": {
         "no-unused-vars": [
             1,

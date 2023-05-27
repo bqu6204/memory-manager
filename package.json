@@ -2,7 +2,11 @@
     "name": "ts-map-storage",
     "version": "1.0.0",
     "description": "A simple memory manager for standardizing the behavior when interacting with JavaScript Map Object as a memory storage.",
-    "main": "commitlint.config.js",
+    "main": "./dist/index.js",
+    "types":"./dist/index.d.ts",
+    "files":[
+        "dist/**/*"
+    ],
     "scripts": {
         "clean": "rm -rf ./dist/*",
         "build": "npm run clean && npm run prettier && npm run lint && tsc",
