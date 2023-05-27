@@ -1,6 +1,8 @@
 # ts-map-storage
 
-map-storage is a simple storage management module Map Object written in typescript.
+This ts-map-storage is a simple storage management module for standardizing behavior when interacting with Map Object as a in-memory-storage, written in typescript.
+
+The basic features limiting the items in storage, cleaning up expired key in interval, deleting the lru (least recently used) key when the item count limit is hit
 
 ## Installation
 

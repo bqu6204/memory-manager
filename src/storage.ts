@@ -168,6 +168,19 @@ class StorageManager<V> implements IStorageManager<V> {
             );
     }
 
+    private checkKeyExist(key: string): boolean {
+        const data = this._storage.get(key);
+        if (!data) return false;
+
+        const currentTime = new Date(Date.now());
+        if (data.expireAt < currentTime) {
+            this._storage.delete(key);
+            return false;
+        }
+
+        return true;
+    }
+
     /**
      * Handles the maximum capacity of the storage.
      * If the storage exceeds the maximum number of items, it performs a cleanup and removes the least recently used (LRU) entry.
@@ -189,7 +202,7 @@ class StorageManager<V> implements IStorageManager<V> {
      */
     public add({ key, value }: { key: string; value: V }): TStorageResult<V> {
         this.validateKey(key);
-        if (this._storage.has(key)) return { success: false };
+        if (this.checkKeyExist(key)) return { success: false };
         this.handleMaxCapacity();
 
         const data = this.buildData(value);
@@ -212,7 +225,7 @@ class StorageManager<V> implements IStorageManager<V> {
         value: V;
     }): TStorageResult<V> {
         this.validateKey(key);
-        if (!this._storage.has(key)) return { success: false };
+        if (!this.checkKeyExist(key)) return { success: false };
         this.handleMaxCapacity();
 
         const data = this.buildData(value);
@@ -250,6 +263,7 @@ class StorageManager<V> implements IStorageManager<V> {
 
     public get(key: string): TStorageValue<V> | undefined {
         this.validateKey(key);
+        this.checkKeyExist(key);
         const result = this._storage.get(key);
         return result;
     }
