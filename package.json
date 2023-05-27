@@ -3,14 +3,14 @@
     "version": "1.0.1",
     "description": "A simple memory manager for standardizing the behavior when interacting with JavaScript Map Object as a memory storage.",
     "main": "./dist/index.js",
-    "types":"./dist/index.d.ts",
-    "files":[
+    "types": "./dist/index.d.ts",
+    "files": [
         "dist/**/*"
     ],
     "scripts": {
         "clean": "rm -rf ./dist/*",
         "build": "npm run clean && npm run prettier && npm run lint && tsc && npm run copy-files",
-        "copy-files":"cp ./README.md ./dist",
+        "copy-files": "cp ./README.md ./dist",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "npx eslint .",
         "pub": "npm version patch && npm run build && npm publish",
@@ -40,5 +40,8 @@
     "bugs": {
         "url": "https://github.com/bqu6204/ts-map-storage/issues"
     },
-    "homepage": "https://github.com/bqu6204/ts-map-storage#readme"
+    "homepage": "https://github.com/bqu6204/ts-map-storage#readme",
+    "dependencies": {
+        "@es-node/ts-map-storage": "^1.0.1"
+    }
 }

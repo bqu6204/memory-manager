@@ -65,17 +65,25 @@ class StorageManager<V> implements IStorageManager<V> {
     private readonly _cleanupIntervalMs: number; // Interval in milliseconds for automatic cleanup
 
     // Constructor for StorageManager
-    constructor({ maxItems, expireMs, keyLength, cleanupIntervalMs }: IConfig) {
-        if (keyLength && (keyLength < 6 || keyLength > 32)) {
+    constructor(config?: IConfig) {
+        const {
+            maxItems = Infinity,
+            expireMs = 24 * 60 * 60 * 1000,
+            keyLength = 8,
+            cleanupIntervalMs = 12 * 60 * 60 * 1000,
+        } = config ?? {};
+
+        if (keyLength < 6 || keyLength > 32) {
             console.warn(
                 'Key length is recommended to be greater than 6 and less than 32'
             );
         }
 
-        this._maxItems = maxItems ?? Infinity;
-        this._expireMs = expireMs ?? 24 * 60 * 60 * 1000;
-        this._keyLength = keyLength ?? 8;
-        this._cleanupIntervalMs = cleanupIntervalMs ?? 24 * 60 * 60 * 1000;
+        this._maxItems = maxItems;
+        this._expireMs = expireMs;
+        this._keyLength = keyLength;
+        this._cleanupIntervalMs = cleanupIntervalMs;
+
         this._cleanupInterval = setInterval(
             () => this.cleanup(),
             this._cleanupIntervalMs

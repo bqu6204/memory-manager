@@ -1,17 +1,17 @@
-# StorageManager
+# ts-map-storage
 
-StorageManager is a simple storage management module for JavaScript Map Object.
+map-storage is a simple storage management module Map Object written in typescript.
 
 ## Installation
 
 ```bash
-npm install storage-manager
+npm install @es-node/ts-map-storage
 ```
 
 ## Usage
 
 ```js
-import { StorageManager } from 'storage-manager';
+import { StorageManager } from '@es-node/ts-map-storage';
 
 // Create a new instance of StorageManager
 const storage = new StorageManager({
