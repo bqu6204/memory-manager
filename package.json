@@ -1,6 +1,6 @@
 {
     "name": "@es-node/ts-map-storage",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A simple memory manager for standardizing the behavior when interacting with JavaScript Map Object as a memory storage.",
     "main": "./dist/index.js",
     "types":"./dist/index.d.ts",
@@ -13,6 +13,7 @@
         "copy-files":"cp ./README.md ./dist",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "npx eslint .",
+        "pub": "npm version patch && npm run build && npm publish",
         "prettier": "prettier --write .",
         "prepare": "husky install"
     },
