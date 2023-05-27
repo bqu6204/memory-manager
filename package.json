@@ -4,6 +4,8 @@
     "description": "A simple memory manager for standardizing the behavior when interacting with JavaScript Map Object as a memory storage.",
     "main": "commitlint.config.js",
     "scripts": {
+        "clean": "rm -rf ./dist/*",
+        "build": "npm run clean && npm run prettier && npm run lint && tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "npx eslint .",
         "prettier": "prettier --write .",
